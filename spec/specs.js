@@ -35,3 +35,17 @@ describe('findAndReplace', function() {
     expect(findAndReplace(findAndReplace(inputString, 'Do I', 'You really'), '?', '!')).to.equal('You really sound like a ' + searchKey + '!');
   });
 });
+
+describe('isEmpty', function() {
+  it('returns true if string contains no characters', function() {
+    expect(''.isEmpty()).to.equal(true);
+  });
+
+  it('returns true if string contains only whitespace characters', function() {
+    expect('        '.isEmpty()).to.equal(true);
+  });
+
+  it('returns false if string contains non-whitespace characters', function() {
+    expect('!'.isEmpty()).to.equal(false);
+  });
+});
