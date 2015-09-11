@@ -14,4 +14,8 @@ describe('findAndReplace', function() {
   it('returns input string if search string is identical to the replacement string', function() {
     expect(findAndReplace(inputString, searchKey, searchKey)).to.equal(inputString);
   });
+
+  it('returns modified input string when search string and replacement string differ', function() {
+    expect(findAndReplace(inputString, searchKey, replacement)).to.equal('Do I sound like a ' + replacement + '?');
+  });
 });
