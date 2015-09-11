@@ -31,8 +31,9 @@ describe('findAndReplace', function() {
     expect(findAndReplace(inputString, 'Do I', 'You really')).to.equal('You really sound like a ' + searchKey + '?');
   });
 
-  it('can be used in a nested fashion', function() {
-    expect(findAndReplace(findAndReplace(inputString, 'Do I', 'You really'), '?', '!')).to.equal('You really sound like a ' + searchKey + '!');
+  it('replaces multiple occurences of search string with replacement string', function() {
+    expect(findAndReplace('wowowow', 'w', 'z')).to.equal('zozozoz');
+    expect(findAndReplace(inputString, 'D', 'd')).to.equal('do I sound like a ducati?');
   });
 });
 

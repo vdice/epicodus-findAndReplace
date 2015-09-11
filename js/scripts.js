@@ -1,6 +1,6 @@
-var findAndReplace = function(inputString, searchKey, replacement) {
-  return searchKey.isEmpty() || replacement.isEmpty() ?
-    inputString : inputString.replace(searchKey, replacement);
+var findAndReplace = function(inputString, searchString, replacementString) {
+  return searchString.isEmpty() || replacementString.isEmpty() ?
+    inputString : inputString.replace(new RegExp(searchString, 'g'), replacementString);
 }
 
 String.prototype.isEmpty = function() {
